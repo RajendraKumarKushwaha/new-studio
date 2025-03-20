@@ -82,7 +82,7 @@ export function GalleryGrid({ data }) {
 
       {/* Fullscreen Modal */}
       {modalOpen && currentCategory && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center top-18 z-50">
           <button
             className="absolute top-4 right-4 text-pink-400 hover:text-pink-500"
             onClick={closeModal}

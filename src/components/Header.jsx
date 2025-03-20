@@ -117,13 +117,15 @@ export default function Header() {
                     <Link href="/testimonials" onClick={() => setIsOpen(false)}>Testimonials</Link>
                     <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
 
-                    <Link
+                    {/* <Link
                         href="/contact"
                         className="mt-4 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"
                         onClick={() => setIsOpen(false)}
                     >
-                        Enquiry Now
-                    </Link>
+                       Enquiry Now
+                    </Link> */}
+                        
+                
                 </nav>
             </div>
 
