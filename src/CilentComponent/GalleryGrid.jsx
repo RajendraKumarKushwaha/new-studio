@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -42,49 +42,72 @@ export function GalleryGrid({ data }) {
 
   return (
     <>
-      <div className="space-y-16">
+      <div className="">
         {data.map((category, index) => {
           const isExpanded = expanded[category.title];
           const visibleImages = isExpanded
             ? category.images
-            : category.images.slice(0, 5);
+            : category.images.slice(0, 6);
 
           return (
-            <div key={index}>
-              <h3 className="text-gray-300 text-lg max-w-3xl mx-auto space-y-6 ">
-                {category.title}
-              </h3>
-              <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-6 pt-10">
-                {visibleImages.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt={`${category.title} ${idx + 1}`}
-                    className="w-full rounded-lg border border-pink-500 shadow-lg hover:shadow-pink-500/50 transform hover:scale-105 transition duration-300 ease-in-out cursor-pointer"
-                    onClick={() => openModal(category, idx)}
-                  />
-                ))}
-              </div>
-              {category.images.length > 5 && (
-                <div className="mt-4 text-center">
-                  <button
-                    onClick={() => toggleExpand(category.title)}
-                    className="bg-pink-600 hover:bg-pink-500 cursor-pointer text-white font-semibold px-4 py-2 rounded-md transition"
-                  >
-                    {isExpanded ? "Show Less" : "Show More"}
-                  </button>
+            <section
+              key={index}
+              className="relative bg-fixed bg-cover bg-center pt-[100vh] "
+              style={{
+                backgroundImage: `url('${category.images[0]}')`,
+              }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0   z-0" />
+
+              {/* Content */}
+              <div className="bg-black w-full">
+                <div className="relative py-20  z-10 px-4 container mx-auto text-white">
+                  {/* <h3 className="text-3xl md:text-4xl font-bold text-center mb-10">
+                    {category.title}
+                  </h3> */}
+                  <h2 className="text-4xl md:text-[44px] text-center mb-10 font-semibold">
+                     <span className="text-pink-500 "> {category.title}</span>
+                  </h2>
+
+                  <div className="grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {visibleImages.map((img, idx) => (
+                      <div
+                        key={idx}
+                        className="aspect-[5/5] overflow-hidden border border-pink-500 shadow-lg hover:shadow-pink-500/50 transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+                        onClick={() => openModal(category, idx)}
+                      >
+                        <img
+                          src={img}
+                          alt={`${category.title} ${idx + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {category.images.length > 6 && (
+                    <div className="mt-6 text-center">
+                      <button
+                        onClick={() => toggleExpand(category.title)}
+                        className="bg-pink-600 hover:bg-pink-500 text-white font-semibold px-4 py-2 rounded-md transition"
+                      >
+                        {isExpanded ? "Show Less" : "Show More"}
+                      </button>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
+              </div>
+            </section>
           );
         })}
       </div>
 
-      {/* Fullscreen Modal */}
+      {/* Modal */}
       {modalOpen && currentCategory && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center top-18 z-50">
+        <div className="fixed inset-0 bg-black pt-30 bg-opacity-90 flex items-center justify-center z-50">
           <button
-            className="absolute top-4 right-4 text-pink-400 hover:text-pink-500"
+            className="absolute top-20 right-4 text-pink-400 hover:text-pink-500"
             onClick={closeModal}
           >
             <X size={30} />
