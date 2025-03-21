@@ -100,12 +100,14 @@ const galleryData = [
 
 export default function GallerySection() {
   return (
-    <section className="w-full bg-black py-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-pink-500">
-          Our Photography Gallery
+    <section className="w-full bg-gray-900  text-white  py-20 ">
+      <div className="container px-4 text-center space-y-6 mx-auto">
+        <h2 className="text-4xl md:text-[44px] font-semibold">
+          Our <span className="text-pink-500 ">Gallery</span>
         </h2>
-        <GalleryGrid data={galleryData} />
+        <div className="">
+          <GalleryGrid data={galleryData} />
+        </div>
       </div>
     </section>
   );

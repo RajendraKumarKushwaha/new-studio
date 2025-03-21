@@ -50,18 +50,20 @@ const portfolioItems = [
 
 export default function PortfolioSection() {
   return (
-    <section className="bg-black text-white px-6 md:px-20 py-20">
-      <div className="max-w-7xl mx-auto text-center space-y-10">
+    <section className="bg-black text-white   py-20 ">
+      <div className="container px-4 mx-auto text-center space-y-6">
         <FadeIn delay={0}>
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Our <span className="text-pink-500">Portfolio</span>
-          </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Discover how we turn your special moments into timeless frames. Each project is a story, and we’re here to tell it beautifully.
-          </p>
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-[44px] font-semibold">
+              Our <span className="text-pink-500 ">Portfolio</span>
+            </h2>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              Discover how we turn your special moments into timeless frames. Each project is a story, and we’re here to tell it beautifully.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="grid bg-black sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
+        <div className="grid bg-black sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6">
           {portfolioItems.map((item, index) => (
             <FadeIn delay={index * 0.2} key={item.title}>
               <ImageSliderBox

@@ -27,16 +27,16 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <section className="bg-black text-white px-6 md:px-20 py-20">
-      <div className="max-w-7xl mx-auto text-center space-y-10">
-        <h2 className="text-4xl md:text-5xl font-bold">
-          Our <span className="text-pink-500">Services</span>
-        </h2>
+    <section className="bg-black text-white px-6 py-20">
+      <div className="max-w-7xl mx-auto text-center space-y-6">
+      <h2 className="text-4xl md:text-[44px] font-semibold">
+              Our <span className="text-pink-500 ">Services</span>
+            </h2>
         <p className="text-gray-300 text-lg max-w-3xl mx-auto">
           Whether you're celebrating love, family, or milestones — we’ve got the perfect creative solution for you.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6 ">
           {services.map((service, index) => (
             <ServiceCard
               key={service.title}

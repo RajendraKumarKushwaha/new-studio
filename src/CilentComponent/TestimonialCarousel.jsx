@@ -1,50 +1,51 @@
-"use client"
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+// CilentComponent/TestimonialCarousel.jsx
 
-const testimonials = [
-  {
-    name: "Amit Sharma",
-    feedback: "Absolutely loved their photography! They captured our wedding beautifully.",
-    designation: "Wedding Client",
-  },
-  {
-    name: "Neha Verma",
-    feedback: "The pre-wedding shoot was magical. Highly recommend their services!",
-    designation: "Pre-Wedding Client",
-  },
-  {
-    name: "Rahul & Priya",
-    feedback: "Amazing maternity photos! Their creativity is just mind-blowing.",
-    designation: "Maternity Client",
-  },
-]
+'use client';
 
-export default function TestimonialCarousel() {
-  const [index, setIndex] = useState(0)
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import { Autoplay } from 'swiper/modules';
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [])
-
+export default function TestimonialsSlider({ testimonials }) {
   return (
-    <div className="relative overflow-hidden">
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className="text-center max-w-2xl mx-auto space-y-4"
+    <div className="w-full py-6">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={24}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
       >
-        <p className="text-lg text-gray-300">"{testimonials[index].feedback}"</p>
-        <h4 className="text-xl font-semibold text-pink-500">{testimonials[index].name}</h4>
-        <span className="text-sm text-gray-400">{testimonials[index].designation}</span>
-      </motion.div>
+        {testimonials.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="bg-zinc-900 rounded-2xl p-6 shadow-xl w-full h-full flex flex-col items-center text-center">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-20 h-20 rounded-full object-cover mb-4"
+              />
+              <p className="text-lg italic text-gray-300 mb-4">"{item.feedback}"</p>
+              <h3 className="text-xl font-semibold text-white">{item.name}</h3>
+              <span className="text-pink-500 text-sm">{item.role}</span>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
-  )
+  );
 }

@@ -1,21 +1,60 @@
-import TestimonialCarousel from "@/CilentComponent/TestimonialCarousel";
+// components/testimonials/Testimonials.js
 
+import TestimonialsSlider from "@/CilentComponent/TestimonialCarousel";
 
-export default function TestimonialsSection() {
+const testimonials = [
+  {
+    name: "Ravi Sharma",
+    role: "Founder, Memories World Studio",
+    feedback: "TechYard Web Solutions ne humara studio website itna beautiful banaya!",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    name: "Aman Gupta",
+    role: "CEO, EVFix.in",
+    feedback: "Inka design or SEO dono top-notch hai. Within weeks, traffic double ho gaya!",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    name: "Neha Verma",
+    role: "Owner, HardwareMetals",
+    feedback: "Catalog website perfect bana. clients ko dikhane me classy hai.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    name: "Ravi Sharma",
+    role: "Founder, Memories World Studio",
+    feedback: "TechYard Web Solutions ne humara studio website itna beautiful banaya!",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    name: "Aman Gupta",
+    role: "CEO, EVFix.in",
+    feedback: "Inka design or SEO dono top-notch hai. Within weeks, traffic double ho gaya!",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    name: "Neha Verma",
+    role: "Owner, HardwareMetals",
+    feedback: "Catalog website perfect bana. clients ko dikhane me classy hai.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+];
+
+export default function Testimonials() {
   return (
-    <section className="bg-black text-white px-6 md:px-20 py-20">
-      <div className="max-w-7xl mx-auto text-center space-y-10">
-        <h2 className="text-4xl md:text-5xl font-bold">
-          What Our <span className="text-pink-500">Clients Say</span>
+    <div className="bg-gray-900 text-white text-center py-20">
+      <div className="space-y-6">
+        <h2 className="text-4xl md:text-[44px] font-semibold">
+          Our <span className="text-pink-500 ">Clients</span>
         </h2>
-        <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-          Hear from our happy clients about their experiences with us.
+        <p className="text-gray-300 text-lg max-w-3xl mx-auto pb-6">
+          Real feedback from real partners we've worked with
         </p>
-
-        <div className="pt-10 border-1">
-          <TestimonialCarousel />
-        </div>
       </div>
-    </section>
-  )
+     
+      <TestimonialsSlider testimonials={testimonials} />
+    </div>
+   
+  );
 }

@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export default function Footer() {
     return (
-        <footer className="bg-zinc-950 text-gray-300 px-6 md:px-20 py-16 border-t border-zinc-800">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <footer className="bg-zinc-950 text-gray-300 pt-20 pb-10 border-t border-zinc-800">
+            <div className="container px-4 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 {/* Logo + Tagline */}
                 <div>
                     <h2 className="text-2xl font-bold text-white mb-2">Studio Name</h2>

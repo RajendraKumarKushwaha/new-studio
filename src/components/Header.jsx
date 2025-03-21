@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <header className={`w-full fixed top-0 left-0 z-1000 transition-all duration-300 
-            ${isHome ? "bg-transparent text-white" : "bg-white text-black shadow-md border-b"}`}>
+            ${isHome ? "bg-transparent text-white" : "bg-white text-black shadow-md "}`}>
 
             <div className={`container mx-auto flex items-center justify-between px-4 py-4 
                 ${isHome ? "text-white" : "text-black"}`}>
@@ -27,48 +27,28 @@ export default function Header() {
                 </h1>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex flex-1 justify-center gap-6 relative">
+                <div className="hidden lg:flex flex-1 justify-center gap-6 relative">
                     <Link href="/">Home</Link>
                     <Link href="/about">About Us</Link>
                     <Link href="/portfolio">Portfolio</Link>
                     <Link href="/services">Services</Link>
                     <Link href="/gallery">Gallery</Link>
 
-                    {/* Gallery Dropdown */}
-                    {/* <div className="relative group">
-                        <button className="flex items-center gap-1">
-                            Gallery <ChevronDown size={16} />
-                        </button>
-                        <div className="absolute top-8 left-0 w-56 bg-white text-black border shadow-lg rounded-md opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-50">
-                            <Link href="/gallery/wedding" className="block px-4 py-2 hover:bg-gray-100">Wedding Shoot</Link>
-                            <Link href="/gallery/prewedding" className="block px-4 py-2 hover:bg-gray-100">Pre-Wedding Shoot</Link>
-                            <Link href="/gallery/maternity" className="block px-4 py-2 hover:bg-gray-100">Maternity Shoot</Link>
-                            <Link href="/gallery/fashion" className="block px-4 py-2 hover:bg-gray-100">Fashion Shoot</Link>
-                        </div>
-                    </div> */}
+                   
 
                     <Link href="/testimonials">Testimonials</Link>
                     <Link href="/contact">Contact</Link>
                 </div>
 
                 {/* Desktop CTA Button */}
-                <div className="hidden md:flex">
-                    {/* <Link
-                        href="/contact-us"
-                        className={`px-4 py-2 rounded-md transition
-                        ${isHome
-                            ? "bg-white text-black hover:bg-gray-200"
-                            : "bg-black text-white hover:bg-gray-800"
-                        }`}
-                    >
-                        Enquiry Now
-                    </Link> */}
+                <div className="hidden lg:flex">
+                   
                     <EnquiryButton isHome={true} className="px-4 py-2 rounded-md transition"/>
                 </div>
 
                 {/* Mobile Hamburger */}
                 <button
-                    className={`md:hidden ${isHome ? "text-white" : "text-black"}`}
+                    className={`lg:hidden ${isHome ? "text-white" : "text-black"}`}
                     onClick={() => setIsOpen(true)}
                     aria-label="Open Menu"
                 >

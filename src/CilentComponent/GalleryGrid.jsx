@@ -51,10 +51,10 @@ export function GalleryGrid({ data }) {
 
           return (
             <div key={index}>
-              <h3 className="text-2xl text-center font-semibold mb-6 text-pink-400">
+              <h3 className="text-gray-300 text-lg max-w-3xl mx-auto space-y-6 ">
                 {category.title}
               </h3>
-              <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+              <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-6 pt-10">
                 {visibleImages.map((img, idx) => (
                   <img
                     key={idx}
