@@ -1,4 +1,5 @@
 
+import ContactSection from "@/components/Contact";
 import WeddingGallery from "@/components/GallerySection";
 import HeroCarousel from "@/components/HeroCarousel";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -14,6 +15,7 @@ export default function Home() {
    <WeddingGallery/>
    <ServiceSection/>
    <TestimonialsSection/>
+   <ContactSection/>
    
    
    </>
