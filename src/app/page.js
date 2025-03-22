@@ -5,6 +5,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import PortfolioSection from "@/components/PortfolioSection";
 import ServiceSection from "@/components/ServiceSection";
 import TestimonialsSection from "@/components/TestimonialSection";
+import MasonryGridIsotope from "@/GalleryComponent/masonryComponent";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,7 +13,8 @@ export default function Home() {
    <>
    <HeroCarousel/>
    <PortfolioSection/>
-   <WeddingGallery/>
+   {/* <WeddingGallery/> */}
+   <MasonryGridIsotope/>
    <ServiceSection/>
    <TestimonialsSection/>
    <ContactSection/>
