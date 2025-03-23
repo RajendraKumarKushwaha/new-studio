@@ -1,4 +1,5 @@
 
+import PhotographySlider from "@/CilentComponent/HeroSlider";
 import ContactSection from "@/components/Contact";
 import WeddingGallery from "@/components/GallerySection";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -11,7 +12,8 @@ import Image from "next/image";
 export default function Home() {
   return (
    <>
-   <HeroCarousel/>
+   {/* <HeroCarousel/> */}
+   <PhotographySlider/>
    <PortfolioSection/>
    {/* <WeddingGallery/> */}
    <MasonryGridIsotope/>

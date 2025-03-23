@@ -1,0 +1,116 @@
+/* photography-slider.css */
+
+.creative-photography--slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .photography-swiper--slider {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .photography-slider--item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .photography-slider--image img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .photography-slider--layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .photography-slider--layer img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+  
+  .photography-slider--inner {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .photography-heading {
+    color: white;
+    text-align: center;
+  }
+  
+  .photography-item--title {
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  .photography-item--title span {
+    font-size: 3rem;
+    color: pink;
+    display: block;
+  }
+  
+  .photography-item--title-outline {
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+    margin-top: 10px;
+  }
+  
+  .creative-photography--sidebar {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 10;
+  }
+  
+  .creative-photography--sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .creative-photography--sidebar li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .creative-photography--sidebar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .creative-swiper--dots {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: white;
+  }
+  
